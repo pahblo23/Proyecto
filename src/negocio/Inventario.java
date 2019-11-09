@@ -5,15 +5,45 @@ package negocio;
  *
  * @author Pahblo
  */
-public class Producto {
-    private String nombre,marca;
-    private double precio,impuesto;
+public class Inventario {
+     private String nombre, marca, presentacion;
+    private double precioUnitario, cantidad, totalValor;
     
-    public Producto(){};
-    public Producto(String nombre){};
-    public Producto(String nombre, String marca){};
-    public Producto(String nombre, String marca, double precio){};
-    public Producto(String nombre, String marca, double precio, double impuesto){};
+    public Inventario(){};
+    public Inventario(String nombre){
+    this.nombre=nombre;
+    }
+    
+    public Inventario(String nombre, String marca){
+    this.nombre=nombre;
+    this.marca=marca;
+    }
+    public Inventario(String nombre, String marca, double precioUnitario){
+    this.nombre=nombre;
+    this.marca=marca;
+    this.precioUnitario=precioUnitario;
+    }
+    public Inventario(String nombre, String marca, double precioUnitario, double cantidad){
+    this.nombre=nombre;
+    this.marca=marca;
+    this.precioUnitario=precioUnitario;
+    this.cantidad=cantidad;
+    }
+    public Inventario(String nombre, String marca, double precioUnitario, double cantidad, double totalValor){
+    this.nombre=nombre;
+    this.marca=marca;
+    this.precioUnitario=precioUnitario;
+    this.cantidad=cantidad;
+    this.totalValor=totalValor;
+    }
+    public Inventario(String nombre, String marca, double precioUnitario, double cantidad, double totalValor, String presentacion){
+    this.nombre=nombre;
+    this.marca=marca;
+    this.precioUnitario=precioUnitario;
+    this.cantidad=cantidad;
+    this.totalValor=totalValor;
+    this.presentacion=presentacion;
+    }
     
     //Setters & Getters
     public String getNombre() {
@@ -32,23 +62,37 @@ public class Producto {
         this.marca = marca;
     }
 
-    public double getPrecio() {
-        return precio;
+    public double getPrecioUnitario() {
+        return precioUnitario;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    public double getImpuesto() {
-        return impuesto;
-    }
-
-    public void setImpuesto(double impuesto) {
-        this.impuesto = impuesto;
+    public void setPrecioUnitario(double precioUnitario) {
+        this.precioUnitario = precioUnitario;
     }
     
-    public void Vender(Producto prod){
-         prod=prod;
-    };
+    public double getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(double cantidad) {
+        this.cantidad = cantidad;
+    }
+    public double getTotalValor() {
+        return totalValor;
+    }
+
+    public void setTotalValor(double totalValor) {
+        this.totalValor = totalValor;
+    }
+    
+    public String getPresentacion() {
+        return presentacion;
+    }
+
+    public void setPresentacion(String presentacion) {
+        this.presentacion = presentacion;
+    }
+    
+    
+
 }
