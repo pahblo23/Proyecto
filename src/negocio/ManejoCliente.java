@@ -44,7 +44,6 @@ public class ManejoCliente {
                 }
             }
         }
-        
         String nombre = JOptionPane.showInputDialog("Ingrese el nombre");
         String apellido = JOptionPane.showInputDialog("Ingrese el apellido");
         String direccion = JOptionPane.showInputDialog("Ingrese la direccion");
@@ -56,40 +55,39 @@ public class ManejoCliente {
     }
     public void modificarCliente() { //modifica los datos de la lista
         int id = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la id de la persona que desea modificra"));
-         for (int j = 0; j < listadoClientes.size(); j++) {
-             if (listadoClientes.get(j).getId()== id){
-//             JOptionPane.showMessageDialog(null,");
-             Cliente cliente1 = new Cliente();
-        cliente1 = buscarClientes(id);
-        int cedula = cliente1.getId();
-        String nombre = JOptionPane.showInputDialog("Ingrese el nombre", cliente1.getNombre());
-        String apellido = JOptionPane.showInputDialog("Ingrese el apellido", cliente1.getApellido());
-        String direccion = JOptionPane.showInputDialog("Ingrese la direccion", cliente1.getDireccion());
-        int telefono = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el telefon", cliente1.getTelefono()));
-        Cliente clienteModificado = new Cliente(cedula, nombre, apellido, direccion, telefono);
-        for (int i = 0; i < listadoClientes.size(); i++) {
-            if (cliente1.getId() == listadoClientes.get(i).getId()) { //Si la cedula es igual al id 
-                listadoClientes.get(i).setApellido(clienteModificado.getApellido());
-                listadoClientes.get(i).setNombre(clienteModificado.getNombre());
-                listadoClientes.get(i).setDireccion(clienteModificado.getDireccion());
-                listadoClientes.get(i).setTelefono(clienteModificado.getTelefono());
-            }
+        for (int j = 0; j < listadoClientes.size(); j++) {
+            if (listadoClientes.get(j).getId()== id){
+                Cliente cliente1 = new Cliente();
+                cliente1 = buscarClientes(id);
+                int cedula = cliente1.getId();
+                String nombre = JOptionPane.showInputDialog("Ingrese el nombre", cliente1.getNombre());
+                String apellido = JOptionPane.showInputDialog("Ingrese el apellido", cliente1.getApellido());
+                String direccion = JOptionPane.showInputDialog("Ingrese la direccion", cliente1.getDireccion());
+                int telefono = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el telefon", cliente1.getTelefono()));
+                Cliente clienteModificado = new Cliente(cedula, nombre, apellido, direccion, telefono);
+                for (int i = 0; i < listadoClientes.size(); i++) {
+                    if (cliente1.getId() == listadoClientes.get(i).getId()) { //Si la cedula es igual al id 
+                        listadoClientes.get(i).setApellido(clienteModificado.getApellido());
+                        listadoClientes.get(i).setNombre(clienteModificado.getNombre());
+                        listadoClientes.get(i).setDireccion(clienteModificado.getDireccion());
+                        listadoClientes.get(i).setTelefono(clienteModificado.getTelefono());
+                    }
+                }
+            }else{ 
+                JOptionPane.showMessageDialog(null,"La ID cliente no existe");
+            }     
         }
-        }else{ 
-             JOptionPane.showMessageDialog(null,"La ID cliente no existe");
-         }     
-        }
-         
-        
     }
     public void eliminarCliente() { //elimina los datos de la lista
-        int cedula = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la id de la persona"));
+        int id = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la id de la persona"));
         for (int i = 0; i < listadoClientes.size(); i++) {
             //Si la cedula es igual al id 
-            if(cedula == listadoClientes.get(i).getId()){
+            if(id == listadoClientes.get(i).getId()){
                listadoClientes.remove(i);
                JOptionPane.showMessageDialog(null,"El Cliente fue Eliminado");
-            }
+            }else{
+               JOptionPane.showMessageDialog(null,"El Cliente NO existe"); 
+            } 
         }    
     }
     public negocio.Cliente buscarClientes(int cedula) { //busca el metodo en la lista 
