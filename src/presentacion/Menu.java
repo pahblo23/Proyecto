@@ -2,9 +2,9 @@ package presentacion;
 
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
+import negocio.ManejoCliente;
 
 public class Menu {
-
     boolean salir = false;
     int op;
     public Menu() {
@@ -26,20 +26,24 @@ public class Menu {
                
                 switch (op) {
                     case 1://se llama al menú de inventario
+                        
                         SubMenu menuInventario=new SubMenu();
                         menuInventario.mostrarSubMenu(); 
                         break;
                     case 2://se llama al menú ventas
+                       
                         SubMenu menuVentas =new SubMenu();
                         menuVentas.mostrarSubMenu();
                         break;
                     case 3://se llama al menú clientes
                         SubMenu menuClientes= new SubMenu();
                         menuClientes.mostrarSubMenu();
+                        
                         break;
                     case 4://se llama al menú pedidos
                         SubMenu menuPedidos= new SubMenu();
                         menuPedidos.mostrarSubMenu();
+                       
                         break;
                     case 5:
                          String resp;
