@@ -9,17 +9,22 @@ import javax.swing.JOptionPane;
  * @author joemo
  */
 public class ManejoInventario {
-    List<Inventario> InventarioD= new ArrayList<>();
+
+    public ManejoInventario() {
+    }
+
+    List<Inventario> InventarioD = new ArrayList<>();
+
     /**
-     * 
+     *
      * @param InventarioD
      * @return
      */
-    public  ArrayList<Inventario> AgregarInventario(ArrayList<Inventario> InventarioD) {
+    public static ArrayList<Inventario> AgregarInventario(ArrayList<Inventario> InventarioD) {
 
         Inventario inventario = new Inventario();
         String resp, nombre, marca, presentacion;
-        double precioUnitario, cantidad, totalVatlor;
+        double precioUnitario, cantidad, totalValor;
         resp = JOptionPane.showInputDialog("Desea agregar un producto al inventario [si/no]");
         do {
             if (resp.equalsIgnoreCase("si")) {
@@ -27,14 +32,14 @@ public class ManejoInventario {
                 inventario.setNombre(nombre);
                 marca = JOptionPane.showInputDialog("Digite la marca del producto");
                 inventario.setMarca(marca);
-                presentacion= JOptionPane.showInputDialog("Digite la presentacion del producto");
+                presentacion = JOptionPane.showInputDialog("Digite la presentacion del producto");
                 inventario.setPresentacion(presentacion);
                 precioUnitario = Double.parseDouble(JOptionPane.showInputDialog("Digite el precio unitario del producto"));
                 inventario.setPrecioUnitario(precioUnitario);
                 cantidad = Double.parseDouble(JOptionPane.showInputDialog("Digite la cantidad de productoa ingresar"));
                 inventario.setCantidad(cantidad);
-                totalVatlor = (cantidad * precioUnitario);
-                inventario.setTotalValor(totalVatlor);
+                totalValor = (cantidad * precioUnitario);
+                inventario.setTotalValor(totalValor);
                 InventarioD.add(inventario);
 
             } else if ((resp.equalsIgnoreCase("si")) || (resp.equalsIgnoreCase("no"))) {
@@ -49,7 +54,7 @@ public class ManejoInventario {
      *
      * @param InventarioD
      */
-    public void MostrarInventario(ArrayList<Inventario> InventarioD) {
+    public static void MostrarInventario(ArrayList<Inventario> InventarioD) {
         String temp = "";
         for (Inventario inventario : InventarioD) {
             temp = temp + "\n Nombre: " + inventario.getNombre()
@@ -63,5 +68,5 @@ public class ManejoInventario {
         JOptionPane.showMessageDialog(null, temp);
 
     }
-    
+
 }
