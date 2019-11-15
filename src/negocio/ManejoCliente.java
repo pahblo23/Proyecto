@@ -1,6 +1,5 @@
 package negocio;
 
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -12,34 +11,37 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import negocio.Cliente;
 
-public class ManejoCliente { 
+public class ManejoCliente extends Pulpe {
+
     public ManejoCliente() {
     }
     //Crear lista de Clientes    
-    ArrayList<negocio.Cliente> listadoClientes = new ArrayList<negocio.Cliente>();//Se crea una lista de tipo objetocliente que llama el meto 
+    ArrayList<Cliente> listadoClientes = new ArrayList<Cliente>();//Se crea una lista de tipo objetocliente que llama el meto 
+
     public void verTodosClientes() { //metodo se sobre escribe de la interfaz se usa para ver la lista clientes
         String concatena = "";
         for (int i = 0; i < listadoClientes.size(); i++) {
-            concatena = concatena + "*Ciente" + (i + 1) + "      "
-                    + "ID " + listadoClientes.get(i).getId() +"      "
+            concatena = concatena + "Cliente" + (i + 1) + "      "
+                    + "ID " + listadoClientes.get(i).getId() + "      "
                     + "Nombre " + listadoClientes.get(i).getNombre() + "      "
                     + "Apellido " + listadoClientes.get(i).getApellido() + "      "
                     + "Direccion " + listadoClientes.get(i).getDireccion() + "      "
                     + "Telefono " + listadoClientes.get(i).getTelefono() + "\n";
 //            System.out.print("**********************************");
         }
-        JOptionPane.showMessageDialog(null,concatena);
+        JOptionPane.showMessageDialog(null, concatena);
     }
+
     public void agregarCliente() {  //metodo para agregar objetos a la lista                          
         //Este metodo agregamos clientes a nuestra lista   
-        int id =0;
+        int id = 0;
         for (int i = 0; i < 1; i++) {
             id = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la id de la persona"));
             if (listadoClientes.size() != 0) {
                 for (int j = 0; j < listadoClientes.size(); j++) {
                     if (listadoClientes.get(j).getId() == id) {
-                    JOptionPane.showMessageDialog(null,"Id ya existe, ingrese otra");
-                    i--;
+                        JOptionPane.showMessageDialog(null, "Id ya existe, ingrese otra");
+                        i--;
                     }
                 }
             }
@@ -47,16 +49,17 @@ public class ManejoCliente {
         String nombre = JOptionPane.showInputDialog("Ingrese el nombre");
         String apellido = JOptionPane.showInputDialog("Ingrese el apellido");
         String direccion = JOptionPane.showInputDialog("Ingrese la direccion");
-        int telefono = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el telefon"));
+        int telefono = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de teléfono"));
         // cargar mis valores anteriores a mi objeto
-        Cliente cliente1 = new Cliente(id, nombre, apellido,direccion,telefono);
+        Cliente cliente1 = new Cliente(id, nombre, apellido, direccion, telefono);
         listadoClientes.add(cliente1);
-        JOptionPane.showMessageDialog(null,"El Cliente fue Agregado");
+        JOptionPane.showMessageDialog(null, "El Cliente fue Agregado");
     }
+
     public void modificarCliente() { //modifica los datos de la lista
-        int id = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la id de la persona que desea modificra"));
+        int id = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la id de la persona que desea modificar"));
         for (int j = 0; j < listadoClientes.size(); j++) {
-            if (listadoClientes.get(j).getId()== id){
+            if (listadoClientes.get(j).getId() == id) {
                 Cliente cliente1 = new Cliente();
                 cliente1 = buscarClientes(id);
                 int cedula = cliente1.getId();
@@ -73,31 +76,45 @@ public class ManejoCliente {
                         listadoClientes.get(i).setTelefono(clienteModificado.getTelefono());
                     }
                 }
-            }else{ 
-                JOptionPane.showMessageDialog(null,"La ID cliente no existe");
-            }     
+            } else {
+                JOptionPane.showMessageDialog(null, "La ID cliente no existe");
+            }
         }
     }
+
     public void eliminarCliente() { //elimina los datos de la lista
         int id = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la id de la persona"));
         for (int i = 0; i < listadoClientes.size(); i++) {
             //Si la cedula es igual al id 
-            if(id == listadoClientes.get(i).getId()){
-               listadoClientes.remove(i);
-               JOptionPane.showMessageDialog(null,"El Cliente fue Eliminado");
-            }else{
-               JOptionPane.showMessageDialog(null,"El Cliente NO existe"); 
-            } 
-        }    
+            if (id == listadoClientes.get(i).getId()) {
+                listadoClientes.remove(i);
+                JOptionPane.showMessageDialog(null, "El Cliente fue Eliminado");
+            } else {
+                JOptionPane.showMessageDialog(null, "El Cliente NO existe");
+            }
+        }
     }
+
     public negocio.Cliente buscarClientes(int cedula) { //busca el metodo en la lista 
-        for (int i = 0; i < listadoClientes.size(); i++) {            
+        for (int i = 0; i < listadoClientes.size(); i++) {
             //Si la cedula es igual al id 
-            if(cedula == listadoClientes.get(i).getId()){
+            if (cedula == listadoClientes.get(i).getId()) {
                 return listadoClientes.get(i);
             }
         }
         return new negocio.Cliente();// devuelve un objetoCliente de la lista
     }
-}
 
+    // Pablo Díaz - Sobreescritura de métodos
+    
+    @Override
+    public void registrar(){
+        this.agregarCliente();
+    }
+    
+    @Override
+    public void ver(){
+          this.verTodosClientes();
+    }
+
+}
