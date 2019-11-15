@@ -19,10 +19,10 @@ public class SubMenu extends Menu {
     }
 
     public void mostrarSubMenu(OpcionesMenu opcion) {
+        Pulpe iPulperia  = new Pulpe();
+        
         while (!salir) {
             try {
-                
-                 Pulpe iPulperia  = new Pulpe();
                 
                 switch(opcion){
                 /*este switch maneja la opción seleccionada en el 
