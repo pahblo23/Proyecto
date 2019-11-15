@@ -55,8 +55,6 @@ public class Menu {
 
                 switch (op) {
                     case 1://se llama al menú de inventario
-
-
                         m = menu.INVENTARIO;
 //                      ManejoInventario inventario=new ManejoInventario();
 //                      ArrayList<Inventario> InventarioD = null;

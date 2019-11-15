@@ -8,8 +8,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
-//import javafx.collections.FXCollections;
-//import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -46,19 +46,19 @@ public class BaseDatos {
          * @param lista Lista a guardar.
          * @param nombre Nombre del archivo.
          */
-//        public void guardar(ObservableList<T> lista, String nombre) {
-//            try {
-//                fos = new FileOutputStream(nombre);
-//                oos = new ObjectOutputStream(fos);
-//                oos.writeObject(new ArrayList<>(lista));
-//                oos.close();
-//                fos.close();
-//            } catch (FileNotFoundException e) {
-//                System.err.println("ERROR: " + e.getLocalizedMessage());
-//            } catch (IOException e) {
-//                System.err.println("ERROR: " + e.getLocalizedMessage());
-//            }
-//        }
+        public void guardar(ObservableList<T> lista, String nombre) {
+            try {
+                fos = new FileOutputStream(nombre);
+                oos = new ObjectOutputStream(fos);
+                oos.writeObject(new ArrayList<>(lista));
+                oos.close();
+                fos.close();
+            } catch (FileNotFoundException e) {
+                System.err.println("ERROR: " + e.getLocalizedMessage());
+            } catch (IOException e) {
+                System.err.println("ERROR: " + e.getLocalizedMessage());
+            }
+        }
 
         /**
          * Carga una lista desde un archivo.
@@ -66,21 +66,21 @@ public class BaseDatos {
          * @param archivo Nombre del archivo.
          * @return Lista del archivo.
          */
-//        public ObservableList<T> cargar(String archivo) {
-//            ObservableList<T> productos = FXCollections.observableArrayList();
-//            try {
-//                fis = new FileInputStream(archivo);
-//                ois = new ObjectInputStream(fis);
-//                List<T> lista = (List<T>) ois.readObject();
-//                productos = FXCollections.observableList(lista);
-//                ois.close();
-//                fis.close();
-//            } catch (FileNotFoundException e) {
-//                System.err.println("ERROR: " + e.getLocalizedMessage());
-//            } catch (IOException | ClassNotFoundException e) {
-//                System.err.println("ERROR: " + e.getLocalizedMessage());
-//            }
-//            return productos;
-//        }
-//    }
+        public ObservableList<T> cargar(String archivo) {
+            ObservableList<T> productos = FXCollections.observableArrayList();
+            try {
+                fis = new FileInputStream(archivo);
+                ois = new ObjectInputStream(fis);
+                List<T> lista = (List<T>) ois.readObject();
+                productos = FXCollections.observableList(lista);
+                ois.close();
+                fis.close();
+            } catch (FileNotFoundException e) {
+                System.err.println("ERROR: " + e.getLocalizedMessage());
+            } catch (IOException | ClassNotFoundException e) {
+                System.err.println("ERROR: " + e.getLocalizedMessage());
+            }
+            return productos;
+        }
+    }
 }
