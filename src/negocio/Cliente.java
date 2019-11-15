@@ -1,11 +1,13 @@
 package negocio;
 
-public class Cliente {
-    private int id;
-    private String nombre;
-    private String apellido;
-    private String direccion;
-    private int telefono;
+import java.io.Serializable;
+
+public class Cliente implements Serializable{
+    public int id;
+    public String nombre;
+    public String apellido;
+    public String direccion;
+    public int telefono;
     
     public Cliente() {
     }

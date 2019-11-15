@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import negocio.Cliente;
 
-public class ManejoCliente { 
+public class ManejoCliente implements Serializable { 
     public ManejoCliente() {
     }
     //Crear lista de Clientes    
-    ArrayList<negocio.Cliente> listadoClientes = new ArrayList<negocio.Cliente>();//Se crea una lista de tipo objetocliente que llama el meto 
+    public static ArrayList<negocio.Cliente> listadoClientes = new ArrayList<negocio.Cliente>();//Se crea una lista de tipo objetocliente que llama el meto 
     public void verTodosClientes() { //metodo se sobre escribe de la interfaz se usa para ver la lista clientes
         String concatena = "";
         for (int i = 0; i < listadoClientes.size(); i++) {
@@ -26,7 +26,6 @@ public class ManejoCliente {
                     + "Apellido " + listadoClientes.get(i).getApellido() + "      "
                     + "Direccion " + listadoClientes.get(i).getDireccion() + "      "
                     + "Telefono " + listadoClientes.get(i).getTelefono() + "\n";
-//            System.out.print("**********************************");
         }
         JOptionPane.showMessageDialog(null,concatena);
     }
@@ -99,5 +98,33 @@ public class ManejoCliente {
         }
         return new negocio.Cliente();// devuelve un objetoCliente de la lista
     }
+    
+//    public void agregarListaClientetxt (){
+//        Cliente conexionCliente = new Cliente();
+//        FileOutputStream fichero = null;
+//        try{
+//            fichero = new FileOutputStream ("ListaClientes.txt");
+//            ObjectOutputStream conexion = new ObjectOutputStream(fichero);
+//            conexion.writeObject(listadoClientes);
+//            fichero.close();
+//            conexion.close();
+//            }catch(FileNotFoundException ex){
+//            }catch(IOException ex){
+//            }
+//        }
+//    public void llamarListaClientestxt(){
+//        Cliente conexionCliente = new Cliente();
+//        FileInputStream ficheroEntrada = null;
+//        try{
+//            ficheroEntrada = new FileInputStream("ListaClientes.txt");
+//            try (ObjectInputStream conexionEntrada = new ObjectInputStream(ficheroEntrada)) {
+//            listadoClientes =(ArrayList<Cliente>)conexionEntrada.readObject();
+//            }
+//        }catch(FileNotFoundException ex){
+//        }catch(IOException | ClassNotFoundException ex){
+//        }    
+//    }
+    
+    
 }
 

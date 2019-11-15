@@ -7,6 +7,7 @@ import negocio.ManejoCliente;
 public class Menu {
     boolean salir = false;
     int op;
+    ManejoCliente x = new ManejoCliente();
     public Menu() {
     }
     //método para invocar el menú 
@@ -26,24 +27,24 @@ public class Menu {
                
                 switch (op) {
                     case 1://se llama al menú de inventario
-                        
-                        SubMenu menuInventario=new SubMenu();
-                        menuInventario.mostrarSubMenu(); 
+                        x.verTodosClientes();
+//                        SubMenu menuInventario=new SubMenu();
+//                        menuInventario.mostrarSubMenu(); 
                         break;
                     case 2://se llama al menú ventas
-                       
-                        SubMenu menuVentas =new SubMenu();
-                        menuVentas.mostrarSubMenu();
+                        x.agregarCliente();
+//                        SubMenu menuVentas =new SubMenu();
+//                        menuVentas.mostrarSubMenu();
                         break;
                     case 3://se llama al menú clientes
-                        SubMenu menuClientes= new SubMenu();
-                        menuClientes.mostrarSubMenu();
-                        
+//                        SubMenu menuClientes= new SubMenu();
+//                        menuClientes.mostrarSubMenu();
+                        x.modificarCliente();
                         break;
                     case 4://se llama al menú pedidos
-                        SubMenu menuPedidos= new SubMenu();
-                        menuPedidos.mostrarSubMenu();
-                       
+//                        SubMenu menuPedidos= new SubMenu();
+//                        menuPedidos.mostrarSubMenu();
+                        x.eliminarCliente();
                         break;
                     case 5:
                          String resp;
