@@ -1,5 +1,6 @@
 
 package pulpepos;
+
 import presentacion.Menu;
 /**
  *
@@ -13,6 +14,8 @@ public class PulpePOS {
     public static void main(String[] args) {
         Menu menuPrincipal=new Menu();
         menuPrincipal.mostrarMenu();
+
+
     }
     
 }

@@ -7,7 +7,7 @@ package negocio;
  * @author Pablo Díaz
  */
 public class Pulpe {
-    public void registrar(){};
+    public  void registrar(){};
     public void ver(){};
     public void modificar(){};
     public void eliminar(){};
