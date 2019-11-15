@@ -3,26 +3,47 @@ package presentacion;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import negocio.Inventario;
+import negocio.ManejoCliente;
 import negocio.ManejoInventario;
+import negocio.Pulpe;
 
 public class SubMenu extends Menu {
 
     ArrayList<Inventario> Inventario;
+    public enum OpcionesMenu {
+            INVENTARIO,
+            VENTAS,
+            CLIENTES,
+            PEDIDOS
+        };
 
     public SubMenu() {
 
     }
-////    public SubMenu(enum opcion) {
-////        this.opcion2=opcion;
-//    }
 
-//    enum opMenuP{
-//        uno,dos,tres,cuatro
-//    }
-//    
-    public void mostrarSubMenu() {
+    public void mostrarSubMenu(OpcionesMenu opcion) {
         while (!salir) {
             try {
+                
+                 Pulpe iPulperia  = new Pulpe();
+                
+                switch(opcion){
+                    case INVENTARIO:
+                        iPulperia = new ManejoInventario();
+                            break;
+                    case VENTAS:
+                        
+                        break;
+                        
+                    case CLIENTES:
+                        iPulperia=new ManejoCliente();
+                        break;
+                            
+                    default:
+                        iPulperia = new Pulpe();
+                        break;
+                }
+                    
                 op = Integer.parseInt(JOptionPane.showInputDialog(null, "\nPor favor "
                         + "digite el número de la sección a la que desea acceder:"
                         + "\n1. Ver Registros"
@@ -34,12 +55,12 @@ public class SubMenu extends Menu {
                 switch (op) {
                     case 1://ver registros
 
-                        ManejoInventario.MostrarInventario(Inventario);
+                        iPulperia.ver();
 
                         break;
                     case 2://agregar registros
 
-                        ManejoInventario.AgregarInventario(Inventario);
+                        iPulperia.registrar();
 
                         break;
                     case 3://modificar registros

@@ -1,19 +1,13 @@
 package presentacion;
 
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
-
-
-
-import negocio.Inventario;
-import negocio.ManejoInventario;
+import presentacion.SubMenu.OpcionesMenu;
 
 public class Menu {
 
     protected boolean salir = false;
     protected static int op;
-    protected static menu m;
 
     enum menu {
         INVENTARIO,
@@ -21,7 +15,6 @@ public class Menu {
         CLIENTES,
         PEDIDOS
     };
-
 
     public Menu() {
     }
@@ -55,29 +48,21 @@ public class Menu {
 
                 switch (op) {
                     case 1://se llama al menú de inventario
-                        m = menu.INVENTARIO;
-//                      ManejoInventario inventario=new ManejoInventario();
-//                      ArrayList<Inventario> InventarioD = null;
                         SubMenu menuInventario = new SubMenu();
-                        menuInventario.mostrarSubMenu();
+                        menuInventario.mostrarSubMenu(OpcionesMenu.INVENTARIO);
                         break;
                     case 2://se llama al menú ventas
-                        m = menu.VENTAS;
                         SubMenu menuVentas = new SubMenu();
-
-                        menuVentas.mostrarSubMenu();
+                        menuVentas.mostrarSubMenu(OpcionesMenu.VENTAS);
                         break;
                     case 3://se llama al menú clientes
-                        m = menu.CLIENTES;
                         SubMenu menuClientes = new SubMenu();
-                        menuClientes.mostrarSubMenu();
-                        
+                        menuClientes.mostrarSubMenu(OpcionesMenu.CLIENTES);
                         break;
                     case 4://se llama al menú pedidos
-                        m = menu.PEDIDOS;
                         SubMenu menuPedidos = new SubMenu();
-                        menuPedidos.mostrarSubMenu();
-                       
+                        menuPedidos.mostrarSubMenu(OpcionesMenu.PEDIDOS);
+
                         break;
                     case 5:
                         String resp;
@@ -101,11 +86,4 @@ public class Menu {
 
     }
 
-    public static menu getM() {
-        return m;
-    }
-
-    public static void setM(menu m) {
-        Menu.m = m;
-    }
 }
