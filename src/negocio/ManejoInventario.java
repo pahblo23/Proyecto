@@ -9,11 +9,11 @@ import javax.swing.JOptionPane;
  * @author joemo
  */
 public class ManejoInventario extends Pulpe {
-
+    List<Inventario> InventarioD = new ArrayList<>();
     public ManejoInventario() {
     }
 
-    List<Inventario> InventarioD = new ArrayList<>();
+    
 
     //Pablo Díaz - se sobreescriben los métodos de la clase Pulpe
     @Override

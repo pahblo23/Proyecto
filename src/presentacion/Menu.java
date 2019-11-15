@@ -7,19 +7,13 @@ import presentacion.SubMenu.OpcionesMenu;
 public class Menu {
 
     protected boolean salir = false;
-    protected static int op;
+    protected  int op;
 
-    enum menu {
-        INVENTARIO,
-        VENTAS,
-        CLIENTES,
-        PEDIDOS
-    };
 
     public Menu() {
     }
 
-    public static int getOp() {
+    public int getOp() {
         return op;
     }
 
@@ -32,7 +26,7 @@ public class Menu {
      * Metodo para mostrar el menu principal
      *
      */
-    //método para invocar el menú 
+    //método para invocar el menú principal
     public void mostrarMenu() {
         JOptionPane.showMessageDialog(null, "  ***Sistema de administración de "
                 + "Pulpería ***", "Bienvenido", INFORMATION_MESSAGE);
