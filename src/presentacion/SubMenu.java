@@ -1,16 +1,13 @@
 package presentacion;
 
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import negocio.Inventario;
 import negocio.ManejoCliente;
 import negocio.ManejoInventario;
 import negocio.Pulpe;
 
 public class SubMenu extends Menu {
 
-    ArrayList<Inventario> Inventario;
-    public enum OpcionesMenu {
+    public enum OpcionesMenu {//enum para las opciones del menu principal
             INVENTARIO,
             VENTAS,
             CLIENTES,
@@ -28,6 +25,8 @@ public class SubMenu extends Menu {
                  Pulpe iPulperia  = new Pulpe();
                 
                 switch(opcion){
+                /*este switch maneja la opción seleccionada en el 
+                menú principal y crea una instancia de la clase correspondiente*/
                     case INVENTARIO:
                         iPulperia = new ManejoInventario();
                             break;
@@ -52,20 +51,18 @@ public class SubMenu extends Menu {
                         + "\n4. Eliminar Registro"
                         + "\n5. Salir"));
 
-                switch (op) {
+                switch (op) {//switch q define la acción a ejecutar en el submenú
                     case 1://ver registros
-
                         iPulperia.ver();
-
                         break;
                     case 2://agregar registros
-
                         iPulperia.registrar();
-
                         break;
                     case 3://modificar registros
+                        iPulperia.modificar();
                         break;
                     case 4://eliminar registros
+                        iPulperia.eliminar();
                         break;
                     case 5:
                         String resp;
@@ -75,7 +72,7 @@ public class SubMenu extends Menu {
                         }
                         break;
                     default:
-                        JOptionPane.showMessageDialog(null, "\nDebe elegir una de las 5 Opciones mostradas:\n");//aquí podemos meter un excepción
+                        JOptionPane.showMessageDialog(null, "\nDebe elegir una de las 5 Opciones mostradas:\n");
                 }
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Debes insertar un número");
@@ -85,7 +82,4 @@ public class SubMenu extends Menu {
         }
     }
 
-//    void mostrarSubMenu(ArrayList<Inventario> AgregarInventario) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
 }
