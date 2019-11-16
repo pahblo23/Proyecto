@@ -1,6 +1,7 @@
 package negocio;
 
 import datos.Archivo;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -9,7 +10,7 @@ import java.util.ArrayList;
  * @see ManejoCliente
  * @see ManejoInventario
  */
-public class ManejoDato {
+public class ManejoDato implements Serializable {
 
     public static ArrayList<Cliente> listadoClientes = new ArrayList<>();//Se crea una lista de tipo objetocliente
     public static ArrayList<Inventario> InventarioD = new ArrayList<>();

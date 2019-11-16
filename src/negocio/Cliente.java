@@ -1,16 +1,19 @@
 package negocio;
+
+import java.io.Serializable;
+
 /**
  * Esta es la clase abstracta para la creacion de objetos tipo cliente
  * @author Siviani
  * @version 1.3
  * 
  */
-public class Cliente {
-    private int id;
-    private String nombre;
-    private String apellido;
-    private String direccion;
-    private int telefono;
+public class Cliente implements Serializable {
+    public int id;
+    public String nombre;
+    public String apellido;
+    public String direccion;
+    public int telefono;
     /**
      * Constructor vacio de la clase cliente
      */
