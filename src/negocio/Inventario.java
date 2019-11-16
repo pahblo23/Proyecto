@@ -12,6 +12,7 @@ public class Inventario {
 
     //Constructores
     public Inventario() {
+        ManejoDato.InventarioD= ManejoDato.archivo.cargar(ManejoDato.rutaArchivo);
     }
 
     ;

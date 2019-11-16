@@ -2,7 +2,9 @@ package presentacion;
 
 import javax.swing.JOptionPane;
 import negocio.ManejoCliente;
+import negocio.ManejoDato;
 import negocio.ManejoInventario;
+import negocio.ManejoProveedor;
 import negocio.Pulpe;
 
 public class SubMenu extends Menu {
@@ -37,7 +39,9 @@ public class SubMenu extends Menu {
                     case CLIENTES:
                         iPulperia=new ManejoCliente();
                         break;
-                            
+                    case PEDIDOS:
+                            iPulperia=new ManejoProveedor();
+                            break;
                     default:
                         iPulperia = new Pulpe();
                         break;
@@ -65,11 +69,8 @@ public class SubMenu extends Menu {
                         iPulperia.eliminar();
                         break;
                     case 5:
-                        String resp;
-                        resp = JOptionPane.showInputDialog("Esta seguro que desea abandonar esta sección (S/N)? ");
-                        if ("S".equalsIgnoreCase(resp)) {
-                            salir = true;
-                        }
+                            ManejoDato.archivo.guardar(ManejoDato.InventarioD, ManejoDato.rutaArchivo);
+                            salir = true;                       
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, "\nDebe elegir una de las 5 Opciones mostradas:\n");

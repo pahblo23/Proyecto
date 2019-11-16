@@ -1,10 +1,10 @@
-
 package pulpepos;
 
 import presentacion.Menu;
+
 /**
  *
- * @author Pahblo
+ * @author Pablo Díaz
  */
 public class PulpePOS {
 
@@ -12,10 +12,9 @@ public class PulpePOS {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Menu menuPrincipal=new Menu();
+        Menu menuPrincipal = new Menu();
         menuPrincipal.mostrarMenu();
 
-
     }
-    
+
 }

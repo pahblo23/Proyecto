@@ -1,8 +1,6 @@
 package negocio;
 
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author joemo
@@ -11,7 +9,7 @@ public class ManejoInventario extends Pulpe {
 
     public ManejoInventario() {
     }
-
+    
     //Pablo Díaz - se sobreescriben los métodos de la clase Pulpe
     @Override
     public void registrar() {
@@ -67,8 +65,7 @@ public class ManejoInventario extends Pulpe {
     }
 
     /**
-     *
-     * @param InventarioD
+     * Muestra los datos cargados a Inventario
      */
     public void MostrarInventario() {
         String temp = "";
