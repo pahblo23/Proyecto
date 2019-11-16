@@ -5,6 +5,8 @@ import presentacion.Menu;
 /**
  * Clase principal
  *
+ * @author Pablo Díaz
+=======
  * @author Pablo
  */
 public class PulpePOS {

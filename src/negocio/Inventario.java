@@ -15,6 +15,7 @@ public class Inventario {
      * Constructor vacio de la clase cliente
      */
     public Inventario() {
+        ManejoDato.InventarioD= ManejoDato.archivo.cargar(ManejoDato.rutaArchivo);
     }
 
     ;

@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-<<<<<<< HEAD
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/Cursos%20U/Programacion%202/proyecto%20progra%20master/Proyecto/</file>
-=======
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/Proyecto-master/src/presentacion/Menu.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/Proyecto-master/src/negocio/ManejoInventario.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/Proyecto-master/src/datos/BaseDatos.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/Proyecto-master/src/negocio/Producto.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/Proyecto-master/src/pulpepos/PulpePOS.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/Proyecto-master/src/presentacion/SubMenu.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/Proyecto-master/src/negocio/Inventario.java</file>
->>>>>>> b138a44ba474d06e955e972ca6deb27ec508c4f3
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/PulpePOS/src/negocio/ManejoProveedor.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/PulpePOS/src/pulpepos/PulpePOS.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/PulpePOS/src/datos/Archivo.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/PulpePOS/src/negocio/Inventario.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/PulpePOS/src/presentacion/Menu.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/PulpePOS/src/negocio/Proveedor.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/PulpePOS/src/presentacion/SubMenu.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/PulpePOS/src/negocio/Pulpe.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/PulpePOS/src/negocio/ManejoInventario.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/PulpePOS/src/negocio/ManejoDato.java</file>
         </group>
     </open-files>
 </project-private>

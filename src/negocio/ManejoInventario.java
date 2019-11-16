@@ -1,8 +1,6 @@
 package negocio;
 
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
-
 /**
  * Clase para el manejo de inventario
  * @author jose Morales
@@ -86,6 +84,7 @@ public class ManejoInventario extends Pulpe {
     }
 
     /**
+     * Muestra los datos cargados a Inventario
      * Metodo para mostar el inventario
      * @see ManejoDato
      */
