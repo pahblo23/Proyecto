@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import negocio.Cliente;
+import static negocio.ManejoDato.listadoClientes;
 
 /**
  * Clase de manejo de clientes
@@ -17,7 +18,7 @@ import negocio.Cliente;
  * @author Siviani
  * @version 1.4
  */
-public class ManejoCliente extends Pulpe {
+public class ManejoCliente extends Pulpe implements Serializable{
 
     /**
      * Constructor para manejar clientes
@@ -138,6 +139,32 @@ public class ManejoCliente extends Pulpe {
             }
         }
         return new negocio.Cliente();
+    }
+    public void agregarListaClientetxt() {
+        Cliente conexionCliente = new Cliente();
+        FileOutputStream fichero = null;
+        try {
+            fichero = new FileOutputStream("ListaClientes.txt");
+            ObjectOutputStream conexion = new ObjectOutputStream(fichero);
+            conexion.writeObject(listadoClientes);
+            fichero.close();
+            conexion.close();
+        } catch (FileNotFoundException ex) {
+        } catch (IOException ex) {
+        }
+    }
+
+    public void llamarListaClientestxt() {
+        Cliente conexionCliente = new Cliente();
+        FileInputStream ficheroEntrada = null;
+        try {
+            ficheroEntrada = new FileInputStream("ListaClientes.txt");
+            try (ObjectInputStream conexionEntrada = new ObjectInputStream(ficheroEntrada)) {
+                listadoClientes = (ArrayList<Cliente>) conexionEntrada.readObject();
+            }
+        } catch (FileNotFoundException ex) {
+        } catch (IOException | ClassNotFoundException ex) {
+        }
     }
 
     /**

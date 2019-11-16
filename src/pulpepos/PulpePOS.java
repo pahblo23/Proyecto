@@ -1,5 +1,6 @@
 package pulpepos;
 
+import negocio.ManejoCliente;
 import presentacion.Menu;
 
 /**
@@ -17,9 +18,11 @@ public class PulpePOS {
      * @param args
      */
     public static void main(String[] args) {
+        ManejoCliente objcliente = new ManejoCliente();
+        objcliente.llamarListaClientestxt();
         Menu menuPrincipal = new Menu();
         menuPrincipal.mostrarMenu();
-
+        objcliente.agregarListaClientetxt ();
     }
 
 }
