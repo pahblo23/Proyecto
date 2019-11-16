@@ -2,38 +2,57 @@ package negocio;
 
 import javax.swing.JOptionPane;
 /**
- *
- * @author joemo
+ * Clase para el manejo de inventario
+ * @author jose Morales
+ * @version 1.6
+ * @see Pulpe
  */
 public class ManejoInventario extends Pulpe {
 
+    /**
+     * Constructor de manejo de inventario
+     */
     public ManejoInventario() {
     }
-    
-    //Pablo Díaz - se sobreescriben los métodos de la clase Pulpe
+
+    /**
+     * Pablo Diaz Se sobreescribe el metodo registrar de la clase Pulpe
+     * @see Pulpe
+     */
     @Override
     public void registrar() {
         this.AgregarInventario();
     }
 
+    /**
+     * Pablo Diaz Se sobreescribe el metodo ver de la clase Pulpe
+     * @see Pulpe
+     */
     @Override
     public void ver() {
         this.MostrarInventario();
     }
 
+    /**
+     * Pablo Diaz Se sobreescribe el metodo modificar de la clase Pulpe
+     * @see Pulpe
+     */
     @Override
     public void modificar() {
         this.ModificarInventario();
     }
+
+    /**
+     * Pablo Diaz Se sobreescribe el metodo eliminar de la clase Pulpe
+     * @see Pulpe
+     */
     @Override
-    public void eliminar(){
+    public void eliminar() {
         this.BorrarInventario();
     }
 
     /**
-     *
-     * Metodo que agrega productos al inventario
-     *
+     * Metodo para agregar productos al inventario
      */
     public void AgregarInventario() {
 
@@ -66,6 +85,8 @@ public class ManejoInventario extends Pulpe {
 
     /**
      * Muestra los datos cargados a Inventario
+     * Metodo para mostar el inventario
+     * @see ManejoDato
      */
     public void MostrarInventario() {
         String temp = "";
@@ -82,6 +103,11 @@ public class ManejoInventario extends Pulpe {
 
     }
 
+    /**
+     * Metodo para borrar articulos del inventario segun nombre, marca y
+     * presentacion
+     * @see ManejoDato
+     */
     public void BorrarInventario() {
         String nombret, marca, presentacion;
         int index;
@@ -96,6 +122,11 @@ public class ManejoInventario extends Pulpe {
 
     }
 
+    /**
+     * Metodo para modificar articulos del inventario segun nombre, marca y
+     * presentacion
+     * @see ManejoDato
+     */
     public void ModificarInventario() {
         String resp, nombre, marca, presentacion;
         double precioUnitario, cantidad, totalVatlor;

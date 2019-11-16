@@ -3,13 +3,18 @@ package pulpepos;
 import presentacion.Menu;
 
 /**
+ * Clase principal
  *
  * @author Pablo Díaz
+=======
+ * @author Pablo
  */
 public class PulpePOS {
 
     /**
-     * @param args the command line arguments
+     * Metodo main
+     *
+     * @param args
      */
     public static void main(String[] args) {
         Menu menuPrincipal = new Menu();

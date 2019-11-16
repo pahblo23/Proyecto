@@ -4,8 +4,10 @@ import datos.Archivo;
 import java.util.ArrayList;
 
 /**
- *
- * @author Pahblo
+ * Clase donde se crean las listas de objetos de tipo inventario y cliente
+ * @author Josue
+ * @see ManejoCliente
+ * @see ManejoInventario
  */
 public class ManejoDato {
 

@@ -11,13 +11,27 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import negocio.Cliente;
 
+/**
+ * Clase de manejo de clientes
+ *
+ * @author Siviani
+ * @version 1.4
+ */
 public class ManejoCliente extends Pulpe {
 
+    /**
+     * Constructor para manejar clientes
+     */
     public ManejoCliente() {
     }
-    //Crear lista de Clientes    
 
-    public void verTodosClientes() { //metodo se sobre escribe de la interfaz se usa para ver la lista clientes
+    /**
+     * Metodo se sobre escribe de la interfaz y se usa para ver la lista
+     * clientes Este metodo crea la lista de clientes
+     *
+     * @see ManejoDato
+     */
+    public void verTodosClientes() {
         String concatena = "";
         for (int i = 0; i < ManejoDato.listadoClientes.size(); i++) {
             concatena = concatena + "Cliente" + (i + 1) + "      "
@@ -31,8 +45,12 @@ public class ManejoCliente extends Pulpe {
         JOptionPane.showMessageDialog(null, concatena);
     }
 
-    public void agregarCliente() {  //metodo para agregar objetos a la lista                          
-        //Este metodo agregamos clientes a nuestra lista   
+    /**
+     * Metodo para agregar objetos de tipo cliente a la lista de clientes
+     *
+     * @see ManejoDato
+     */
+    public void agregarCliente() {
         int id = 0;
         for (int i = 0; i < 1; i++) {
             id = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la id de la persona"));
@@ -55,7 +73,13 @@ public class ManejoCliente extends Pulpe {
         JOptionPane.showMessageDialog(null, "El Cliente fue Agregado");
     }
 
-    public void modificarCliente() { //modifica los datos de la lista
+    /**
+     * Metodo para hacer modificaciones a la lista de clientes utilizando el
+     * numero de identidad
+     *
+     * @see ManejoDato
+     */
+    public void modificarCliente() {
         int id = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la id de la persona que desea modificar"));
         for (int j = 0; j < ManejoDato.listadoClientes.size(); j++) {
             if (ManejoDato.listadoClientes.get(j).getId() == id) {
@@ -81,10 +105,14 @@ public class ManejoCliente extends Pulpe {
         }
     }
 
-    public void eliminarCliente() { //elimina los datos de la lista
+    /**
+     * Metodo para eliminar clientes utilizando el numero de identidad
+     *
+     * @see ManejoDato
+     */
+    public void eliminarCliente() {
         int id = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la id de la persona"));
         for (int i = 0; i < ManejoDato.listadoClientes.size(); i++) {
-            //Si la cedula es igual al id 
             if (id == ManejoDato.listadoClientes.get(i).getId()) {
                 ManejoDato.listadoClientes.remove(i);
                 JOptionPane.showMessageDialog(null, "El Cliente fue Eliminado");
@@ -94,32 +122,51 @@ public class ManejoCliente extends Pulpe {
         }
     }
 
-    public negocio.Cliente buscarClientes(int cedula) { //busca el metodo en la lista 
+    /**
+     * Metodo para buscar a los clientes dentro de la lista con el numero de
+     * identidad
+     *
+     * @param cedula
+     * @return objeto de la clase cliente
+     * @see ManejoDato
+     */
+    public negocio.Cliente buscarClientes(int cedula) {
         for (int i = 0; i < ManejoDato.listadoClientes.size(); i++) {
             //Si la cedula es igual al id 
             if (cedula == ManejoDato.listadoClientes.get(i).getId()) {
                 return ManejoDato.listadoClientes.get(i);
             }
         }
-        return new negocio.Cliente();// devuelve un objetoCliente de la lista
+        return new negocio.Cliente();
     }
 
-    // Pablo Díaz - Sobreescritura de métodos
+    /**
+     * Metodo para registrar cliente
+     */
     @Override
     public void registrar() {
         this.agregarCliente();
     }
 
+    /**
+     * Metodo para ver cliente
+     */
     @Override
     public void ver() {
         this.verTodosClientes();
     }
 
+    /**
+     * Metodo para modificar cliente
+     */
     @Override
     public void modificar() {
         this.modificarCliente();
     }
 
+    /**
+     * Metodo para eliminar cliente
+     */
     @Override
     public void eliminar() {
         this.eliminarCliente();
