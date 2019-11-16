@@ -1,5 +1,6 @@
 package negocio;
 
+import java.io.Serializable;
 import javax.swing.JOptionPane;
 /**
  * Clase para el manejo de inventario
@@ -7,7 +8,7 @@ import javax.swing.JOptionPane;
  * @version 1.6
  * @see Pulpe
  */
-public class ManejoInventario extends Pulpe {
+public class ManejoInventario extends Pulpe implements Serializable {
 
     /**
      * Constructor de manejo de inventario
@@ -89,6 +90,7 @@ public class ManejoInventario extends Pulpe {
      * @see ManejoDato
      */
     public void MostrarInventario() {
+        
         String temp = "";
         for (Inventario inventario : ManejoDato.InventarioD) {
             temp = temp + "\n Nombre: " + inventario.getNombre()

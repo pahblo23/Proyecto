@@ -17,7 +17,7 @@ import negocio.Cliente;
  * @author Siviani
  * @version 1.4
  */
-public class ManejoCliente extends Pulpe {
+public class ManejoCliente extends Pulpe implements Serializable {
 
     /**
      * Constructor para manejar clientes
