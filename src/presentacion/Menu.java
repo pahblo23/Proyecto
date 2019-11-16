@@ -4,29 +4,44 @@ import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 import presentacion.SubMenu.OpcionesMenu;
 
+/**
+ * Clase de menu
+ *
+ * @author Pablo y Josue
+ */
 public class Menu {
 
     protected boolean salir = false;
-    protected  int op;
+    protected int op;
 
-
+    /**
+     * Constructor del menu
+     */
     public Menu() {
     }
 
+    /**
+     * Metodo para obtener el valor de la variable op
+     *
+     * @return op
+     */
     public int getOp() {
         return op;
     }
 
+    /**
+     * Metodo para definir el valor de la variable op
+     *
+     * @param op
+     * @exception e
+     */
     public void setOp(int op) {
         this.op = op;
     }
 
     /**
-     *
      * Metodo para mostrar el menu principal
-     *
      */
-    //método para invocar el menú principal
     public void mostrarMenu() {
         JOptionPane.showMessageDialog(null, "  ***Sistema de administración de "
                 + "Pulpería ***", "Bienvenido", INFORMATION_MESSAGE);

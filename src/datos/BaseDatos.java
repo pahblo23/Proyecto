@@ -43,6 +43,7 @@ public class BaseDatos {
         /**
          * Guarda una lista de productos a un archivo.
          *
+         * @exception e's
          * @param lista Lista a guardar.
          * @param nombre Nombre del archivo.
          */
@@ -63,6 +64,7 @@ public class BaseDatos {
         /**
          * Carga una lista desde un archivo.
          *
+         * @exception e's
          * @param archivo Nombre del archivo.
          * @return Lista del archivo.
          */

@@ -5,44 +5,65 @@ import negocio.ManejoCliente;
 import negocio.ManejoInventario;
 import negocio.Pulpe;
 
+/**
+ * Metodo para llamar el submenu
+ *
+ * @author Pablo
+ * @author Josue
+ * @version 1.1
+ * @see Menu
+ */
 public class SubMenu extends Menu {
 
-    public enum OpcionesMenu {//enum para las opciones del menu principal
-            INVENTARIO,
-            VENTAS,
-            CLIENTES,
-            PEDIDOS
-        };
+    /**
+     * Enum para las opciones del menu principal
+     */
+    public enum OpcionesMenu {
 
+        INVENTARIO,
+        VENTAS,
+        CLIENTES,
+        PEDIDOS
+    };
+
+    /**
+     * Constructor vacio de subMenu
+     */
     public SubMenu() {
 
     }
 
+    /**
+     * Metodo para mostrar el submenu y su informacion
+     *
+     * @param opcion
+     * @exception e'er
+     */
     public void mostrarSubMenu(OpcionesMenu opcion) {
-        Pulpe iPulperia  = new Pulpe();
-        
+        Pulpe iPulperia = new Pulpe();
+
         while (!salir) {
             try {
-                
-                switch(opcion){
-                /*este switch maneja la opción seleccionada en el 
-                menú principal y crea una instancia de la clase correspondiente*/
+
+                switch (opcion) {
+                    /*este switch maneja la opción seleccionada en el 
+                     menú principal y crea una instancia de la clase correspondiente*/
                     case INVENTARIO:
                         iPulperia = new ManejoInventario();
-                            break;
+                        break;
                     case VENTAS:
-                        
+
                         break;
-                        
+
                     case CLIENTES:
-                        iPulperia=new ManejoCliente();
+                        iPulperia = new ManejoCliente();
                         break;
-                            
+
                     default:
                         iPulperia = new Pulpe();
                         break;
                 }
-                    
+
                 op = Integer.parseInt(JOptionPane.showInputDialog(null, "\nPor favor "
                         + "digite el número de la sección a la que desea acceder:"
                         + "\n1. Ver Registros"
