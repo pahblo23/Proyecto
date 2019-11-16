@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Menu">
+  <ClassDiagramComponents>
+    <Class name="Menu" package="presentacion" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="salir" type="boolean" visibility="protected"/>
+        <Field name="op" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getOp" returnType="int" visibility="public"/>
+        <Method name="setOp" returnType="void" visibility="public">
+          <Argument type="int" name="op"/>
+        </Method>
+        <Method name="mostrarMenu" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

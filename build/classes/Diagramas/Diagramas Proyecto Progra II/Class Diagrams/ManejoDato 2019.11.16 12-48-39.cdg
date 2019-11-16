@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ManejoDato">
+  <ClassDiagramComponents>
+    <Class name="ManejoDato" package="negocio" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="listadoClientes" type="ArrayList&lt;Cliente&gt;" visibility="package" isStatic="true"/>
+        <Field name="InventarioD" type="List&lt;Inventario&gt;" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
