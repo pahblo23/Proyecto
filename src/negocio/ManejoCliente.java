@@ -9,7 +9,6 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import negocio.Cliente;
 import static negocio.ManejoDato.listadoClientes;
 
 /**
@@ -18,7 +17,9 @@ import static negocio.ManejoDato.listadoClientes;
  * @author Siviani
  * @version 1.4
  */
+
 public class ManejoCliente extends Pulpe implements Serializable{
+
 
     /**
      * Constructor para manejar clientes

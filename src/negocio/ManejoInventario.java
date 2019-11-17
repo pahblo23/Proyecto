@@ -1,5 +1,6 @@
 package negocio;
 
+import java.io.Serializable;
 import javax.swing.JOptionPane;
 /**
  * Clase para el manejo de inventario
@@ -7,7 +8,7 @@ import javax.swing.JOptionPane;
  * @version 1.6
  * @see Pulpe
  */
-public class ManejoInventario extends Pulpe {
+public class ManejoInventario extends Pulpe implements Serializable {
 
     /**
      * Constructor de manejo de inventario
@@ -89,11 +90,12 @@ public class ManejoInventario extends Pulpe {
      * @see ManejoDato
      */
     public void MostrarInventario() {
+        
         String temp = "";
         for (Inventario inventario : ManejoDato.InventarioD) {
             temp = temp + "\n Nombre: " + inventario.getNombre()
                     + "\n Marca: " + inventario.getMarca()
-                    + "\n Presenation: " + inventario.getPresentacion()
+                    + "\n Presentación: " + inventario.getPresentacion()
                     + "\n Cantidad: " + inventario.getCantidad()
                     + "\n Precio unitario: " + inventario.getPrecioUnitario()
                     + "\n Total valor en mercancia: " + inventario.getTotalValor()
@@ -104,7 +106,7 @@ public class ManejoInventario extends Pulpe {
     }
 
     /**
-     * Metodo para borrar articulos del inventario segun nombre, marca y
+     * Metodo para borrar artículos del inventario segun nombre, marca y
      * presentacion
      * @see ManejoDato
      */
@@ -130,9 +132,9 @@ public class ManejoInventario extends Pulpe {
     public void ModificarInventario() {
         String resp, nombre, marca, presentacion;
         double precioUnitario, cantidad, totalVatlor;
-        nombre = JOptionPane.showInputDialog("Digite el nombre del producto a borrar");
-        marca = JOptionPane.showInputDialog("Digite la marca del producto a borrar");
-        presentacion = JOptionPane.showInputDialog("Digite presentacion del producto a borrar");
+        nombre = JOptionPane.showInputDialog("Digite el nombre del producto a modificar");
+        marca = JOptionPane.showInputDialog("Digite la marca del producto a modificar");
+        presentacion = JOptionPane.showInputDialog("Digite presentacion del producto a modificar");
         for (Inventario inventario : ManejoDato.InventarioD) {
             if (nombre.equalsIgnoreCase(inventario.getNombre()) & (marca.equalsIgnoreCase(inventario.getMarca())) & (presentacion.equalsIgnoreCase(inventario.getPresentacion())));
 

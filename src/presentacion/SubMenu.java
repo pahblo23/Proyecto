@@ -93,7 +93,7 @@ public class SubMenu extends Menu {
                         iPulperia.eliminar();
                         break;
                     case 5:
-                        ManejoDato.archivo.guardar(ManejoDato.InventarioD, ManejoDato.rutaArchivo);
+
                         salir = true;
                         break;
                     default:
