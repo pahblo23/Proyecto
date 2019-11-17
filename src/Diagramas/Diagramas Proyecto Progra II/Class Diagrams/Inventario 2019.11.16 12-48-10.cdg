@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Inventario">
+  <ClassDiagramComponents>
+    <Class name="Inventario" package="negocio" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="precioUnitario" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="marca"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="double" name="precioUnitario"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="double" name="precioUnitario"/>
+          <Argument type="double" name="cantidad"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="double" name="precioUnitario"/>
+          <Argument type="double" name="cantidad"/>
+          <Argument type="double" name="totalValor"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="double" name="precioUnitario"/>
+          <Argument type="double" name="cantidad"/>
+          <Argument type="double" name="totalValor"/>
+          <Argument type="String" name="presentacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="setMarca" returnType="void" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="getPrecioUnitario" returnType="double" visibility="public"/>
+        <Method name="setPrecioUnitario" returnType="void" visibility="public">
+          <Argument type="double" name="precioUnitario"/>
+        </Method>
+        <Method name="getCantidad" returnType="double" visibility="public"/>
+        <Method name="setCantidad" returnType="void" visibility="public">
+          <Argument type="double" name="cantidad"/>
+        </Method>
+        <Method name="getTotalValor" returnType="double" visibility="public"/>
+        <Method name="setTotalValor" returnType="void" visibility="public">
+          <Argument type="double" name="totalValor"/>
+        </Method>
+        <Method name="getPresentacion" returnType="String" visibility="public"/>
+        <Method name="setPresentacion" returnType="void" visibility="public">
+          <Argument type="String" name="presentacion"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

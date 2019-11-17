@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ManejoCliente">
+  <ClassDiagramComponents>
+    <Class name="ManejoCliente" package="negocio" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="verTodosClientes" returnType="void" visibility="public"/>
+        <Method name="agregarCliente" returnType="void" visibility="public"/>
+        <Method name="modificarCliente" returnType="void" visibility="public"/>
+        <Method name="eliminarCliente" returnType="void" visibility="public"/>
+        <Method name="buscarClientes" returnType="negocio.Cliente" visibility="public">
+          <Argument type="int" name="cedula"/>
+        </Method>
+        <Method name="registrar" returnType="void" visibility="public"/>
+        <Method name="ver" returnType="void" visibility="public"/>
+        <Method name="modificar" returnType="void" visibility="public"/>
+        <Method name="eliminar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
