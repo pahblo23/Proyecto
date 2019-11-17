@@ -5,6 +5,7 @@ import negocio.ManejoCliente;
 import negocio.ManejoDato;
 import negocio.ManejoInventario;
 import negocio.ManejoProveedor;
+import negocio.ManejoVenta;
 import negocio.Pulpe;
 
 /**
@@ -54,6 +55,7 @@ public class SubMenu extends Menu {
                         iPulperia = new ManejoInventario();
                         break;
                     case VENTAS:
+                        iPulperia = new ManejoVenta();
 
                         break;
 
